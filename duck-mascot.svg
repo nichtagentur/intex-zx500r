@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" aria-label="Pools.shop Maskottchen">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE066"/>
+      <stop offset="0.6" stop-color="#FFC93C"/>
+      <stop offset="1" stop-color="#F2940E"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE678"/>
+      <stop offset="1" stop-color="#FFC93C"/>
+    </linearGradient>
+    <radialGradient id="cheek" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF8FA3" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#FF8FA3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF8B00"/>
+      <stop offset="1" stop-color="#CC4D00"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6DC6F0" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#016690" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <!-- water ripple -->
+  <ellipse cx="200" cy="305" rx="155" ry="22" fill="url(#water)"/>
+  <ellipse cx="200" cy="300" rx="125" ry="12" fill="none" stroke="#fff" stroke-width="2" stroke-opacity="0.6"/>
+  <ellipse cx="200" cy="295" rx="95"  ry="8"  fill="none" stroke="#fff" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- body -->
+  <ellipse cx="200" cy="250" rx="135" ry="78" fill="url(#body)"/>
+  <!-- belly highlight -->
+  <ellipse cx="195" cy="265" rx="95" ry="48" fill="#FFE678" opacity="0.45"/>
+  <!-- side wing -->
+  <path d="M 110 230 Q 95 270 130 295 Q 165 285 165 250 Z" fill="#F2940E" opacity="0.5"/>
+  <path d="M 110 230 Q 95 270 130 295" fill="none" stroke="#CC4D00" stroke-width="2" stroke-opacity="0.4"/>
+
+  <!-- tail -->
+  <path d="M 65 220 Q 38 200 38 175 Q 60 195 90 205 Z" fill="url(#body)"/>
+
+  <!-- head -->
+  <ellipse cx="245" cy="135" rx="78" ry="74" fill="url(#head)"/>
+  <!-- cheek blush -->
+  <ellipse cx="220" cy="160" rx="22" ry="14" fill="url(#cheek)"/>
+
+  <!-- eye -->
+  <ellipse cx="265" cy="115" rx="14" ry="16" fill="#fff"/>
+  <ellipse cx="268" cy="118" rx="9" ry="11" fill="#33435c"/>
+  <circle cx="272" cy="114" r="3.5" fill="#fff"/>
+  <circle cx="265" cy="121" r="1.5" fill="#fff" opacity="0.7"/>
+
+  <!-- eyebrow / friendly -->
+  <path d="M 252 95 Q 270 88 285 95" fill="none" stroke="#33435c" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- beak -->
+  <path d="M 290 125 Q 345 122 348 142 Q 345 162 290 158 Z" fill="url(#beak)"/>
+  <path d="M 290 142 Q 320 145 345 142" fill="none" stroke="#A03900" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- pool floaty (swim ring around neck) -->
+  <ellipse cx="200" cy="200" rx="100" ry="20" fill="#016690"/>
+  <ellipse cx="200" cy="200" rx="100" ry="20" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M 105 200 a 95 18 0 1 0 190 0" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 12" opacity="0.85"/>
+  <!-- pools.shop on the floaty -->
+  <text x="200" y="206" text-anchor="middle" fill="#fff" font-family="Jura, system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="2">POOLS.SHOP</text>
+
+  <!-- water droplet on body -->
+  <ellipse cx="170" cy="225" rx="6" ry="9" fill="#fff" opacity="0.55"/>
+  <ellipse cx="172" cy="222" rx="2" ry="3" fill="#fff"/>
+
+  <!-- tiny bubble next to head -->
+  <circle cx="335" cy="80" r="6" fill="none" stroke="#016690" stroke-width="2" opacity="0.55"/>
+  <circle cx="355" cy="100" r="4" fill="none" stroke="#016690" stroke-width="2" opacity="0.4"/>
+</svg>

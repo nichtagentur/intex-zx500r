@@ -3,87 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Intex ZX500R · Sommer 2026 · pools.shop</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<title>Intex ZX500R · Sommer-Aktion · pools.shop</title>
+
+<!-- Real pools.shop fonts: Panton (primary) + Jura (display) -->
 <style>
+@font-face {
+  font-display: swap;
+  font-family: 'Panton';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-Regular_2.ab898f01.woff2') format('woff2'),
+       url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-Regular.309b5eed.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Panton';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-SemiBold_2.803dd045.woff2') format('woff2'),
+       url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-SemiBold.eb34d00f.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Panton';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-Bold_2.737d53c5.woff2') format('woff2'),
+       url('https://ap.nice-cdn.com/disco/build/shop/fonts/Panton-Bold.0e24b92e.woff) format('woff');
+}
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://ap.nice-cdn.com/disco/build/shop/fonts/jura-v9-latin_latin-ext-regular_2.9956e4d3.woff2') format('woff2'),
+       url('https://ap.nice-cdn.com/disco/build/shop/fonts/jura-v9-latin_latin-ext-regular.3fc600fb.woff') format('woff');
+}
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://ap.nice-cdn.com/disco/build/shop/fonts/jura-v9-latin_latin-ext-700_2.7e0f05ea.woff2') format('woff2'),
+       url('https://ap.nice-cdn.com/disco/build/shop/fonts/jura-v9-latin_latin-ext-700.b0314985.woff') format('woff');
+}
+
 :root {
-  --navy:        #186891;
-  --navy-deep:   #0b3c56;
-  --navy-ink:    #082a3d;
-  --orange:      #f2940e;
-  --orange-hot:  #ff6a13;
-  --cream:       #fef6e7;
-  --cream-deep:  #f7e8c8;
-  --pool:        #b3e0ff;
-  --pool-deep:   #6dc6f0;
-  --paper:       #fffaf1;
-  --ink:         #0a1a24;
+  /* exact pools.shop CI colors */
+  --pools-blue:    #016690;
+  --pools-blue-h:  #01587c;
+  --pools-navy:    #33435c;
+  --pools-green:   #647d03;
+  --pools-green-h: #5a7103;
+  --pools-orange:  #ff8b00;
+  --pools-orange-d:#cc4d00;
+  --pools-red:     #cd0000;
+  --pools-gray-1:  #f8f8f8;
+  --pools-gray-2:  #f4f4f4;
+  --pools-gray-3:  #e4e6e7;
+  --pools-text:    #33435c;
+  --pools-paper:   #ffffff;
+  --pools-water:   #b3e0ff;
+  --pools-water-d: #6dc6f0;
+
+  --ff-body:    'Panton', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --ff-display: 'Jura', 'Panton', Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Manrope', -apple-system, sans-serif;
-  background: var(--paper);
-  color: var(--ink);
+  font-family: var(--ff-body);
+  background: var(--pools-paper);
+  color: var(--pools-text);
   overflow-x: hidden;
-  line-height: 1.4;
+  line-height: 1.45;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- subtle paper grain + caustic background ---------- */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 200;
-  opacity: 0.06;
-  mix-blend-mode: multiply;
-  background-image:
-    radial-gradient(circle at 1px 1px, #000 1px, transparent 1px);
-  background-size: 3px 3px;
-}
-
 /* =================================================================
-   TOP STRIP — ticker
+   SALE STRIP (pools.shop style)
 ================================================================= */
-.ticker-strip {
-  background: var(--orange);
-  color: var(--navy-ink);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
+.sale-strip {
+  background: var(--pools-red);
+  color: #fff;
+  text-align: center;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--navy-ink);
-  overflow: hidden;
-  position: relative;
+  letter-spacing: 0.02em;
+  padding: 9px 16px;
+  border-bottom: 1px solid #a30000;
 }
-.ticker-track {
-  display: flex;
-  white-space: nowrap;
-  animation: ticker 38s linear infinite;
-  padding: 10px 0;
-}
-.ticker-track span {
-  padding: 0 32px;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-}
-.ticker-track span::after {
-  content: '✺';
-  color: var(--navy);
-  font-size: 1.1em;
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+.sale-strip span { margin: 0 14px; }
+.sale-strip .dot { display: inline-block; width: 6px; height: 6px; background: #fff; border-radius: 50%; margin: 0 6px; vertical-align: middle; opacity: 0.6; }
 
 /* =================================================================
    NAV
@@ -92,34 +104,34 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 40px;
-  background: var(--paper);
-  border-bottom: 1px solid rgba(8,42,61,0.08);
+  padding: 18px 40px;
+  background: #fff;
+  border-bottom: 1px solid var(--pools-gray-3);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
-  background: rgba(255,250,241,0.92);
 }
-.nav-logo img { height: 30px; display: block; }
+.nav-logo img { height: 32px; display: block; }
 .nav-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--navy);
   display: flex;
-  gap: 28px;
   align-items: center;
+  gap: 26px;
+  font-size: 0.82rem;
+  color: var(--pools-text);
+  font-weight: 600;
+}
+.nav-meta .live {
+  color: var(--pools-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .nav-meta .dot {
   width: 8px; height: 8px;
-  background: var(--orange-hot);
+  background: var(--pools-green);
   border-radius: 50%;
   display: inline-block;
   animation: pulse 1.6s ease-in-out infinite;
-  margin-right: 8px;
-  vertical-align: middle;
 }
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
@@ -131,579 +143,531 @@ body::before {
 ================================================================= */
 .hero {
   position: relative;
-  min-height: calc(100vh - 100px);
-  padding: 60px 40px 80px;
-  background: var(--cream);
+  padding: 60px 40px 70px;
+  background: linear-gradient(180deg, #f0f9ff 0%, #d7eefb 60%, var(--pools-water) 100%);
   overflow: hidden;
 }
-
-/* big watermark "SUMMER" */
-.hero-watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-8deg);
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(20rem, 38vw, 50rem);
-  color: var(--cream-deep);
-  letter-spacing: -0.05em;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-  line-height: 0.8;
-  white-space: nowrap;
-}
-
-/* sun disc */
+/* sun */
 .sun {
   position: absolute;
-  width: 320px; height: 320px;
+  width: 280px; height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ffe198, var(--orange) 60%, var(--orange-hot));
-  box-shadow: 0 0 80px rgba(255,160,40,0.5), inset -20px -30px 60px rgba(0,0,0,0.15);
-  top: 80px; right: 60px;
+  background: radial-gradient(circle at 35% 35%, #fff5c8, #ffd341 55%, var(--pools-orange));
+  box-shadow: 0 0 80px rgba(255,139,0,0.35), inset -20px -30px 60px rgba(0,0,0,0.08);
+  top: 50px; right: -50px;
   z-index: 1;
   animation: float 8s ease-in-out infinite;
 }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-18px); }
+  50%      { transform: translateY(-15px); }
 }
 
-/* pool water ripples bottom */
+/* water waves at bottom */
 .hero-water {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 36%;
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(109,198,240,0.4) 30%, var(--pool) 100%);
+  height: 18%;
+  background: linear-gradient(180deg, transparent 0%, rgba(1,102,144,0.35) 100%);
   z-index: 1;
-  clip-path: polygon(0 18%, 8% 14%, 16% 18%, 24% 12%, 36% 16%, 48% 11%, 60% 17%, 72% 13%, 84% 18%, 92% 14%, 100% 18%, 100% 100%, 0 100%);
+  clip-path: polygon(0 30%, 10% 20%, 20% 30%, 30% 18%, 40% 28%, 50% 16%, 60% 26%, 70% 20%, 80% 30%, 90% 18%, 100% 28%, 100% 100%, 0 100%);
 }
-.hero-water::before,
-.hero-water::after {
+.hero-water::before, .hero-water::after {
   content: '';
   position: absolute;
   left: -10%; right: -10%;
-  height: 1px;
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+  height: 2px;
+  background: rgba(255,255,255,0.5);
 }
-.hero-water::before { top: 30%; transform: rotate(-1deg); }
-.hero-water::after  { top: 55%; transform: rotate(0.6deg); }
+.hero-water::before { top: 38%; }
+.hero-water::after  { top: 65%; }
 
 .hero-grid {
   position: relative;
   z-index: 5;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-  max-width: 1400px;
+  gap: 50px;
+  max-width: 1280px;
   margin: 0 auto;
   align-items: center;
-  min-height: 75vh;
+  min-height: 70vh;
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  gap: 12px;
+  font-family: var(--ff-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 30px;
+  color: var(--pools-blue);
+  margin-bottom: 22px;
   font-weight: 700;
 }
 .hero-eyebrow .badge {
-  background: var(--orange-hot);
+  background: var(--pools-red);
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 2px;
-  transform: rotate(-2deg);
-  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
 }
 
 .hero-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
-  font-size: clamp(3.2rem, 7.2vw, 8.2rem);
-  line-height: 0.88;
-  letter-spacing: -0.035em;
-  color: var(--navy-ink);
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 6.4vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--pools-navy);
+  text-transform: uppercase;
 }
-.hero-title em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--orange-hot);
+.hero-title .accent {
+  color: var(--pools-blue);
   position: relative;
 }
-.hero-title em::after {
+.hero-title .accent::after {
   content: '';
   position: absolute;
-  bottom: 0.05em; left: -0.05em; right: -0.05em;
-  height: 8px;
-  background: var(--orange);
+  bottom: 6px; left: 0; right: 0;
+  height: 10px;
+  background: var(--pools-orange);
   z-index: -1;
-  border-radius: 6px;
-  transform: skewX(-12deg);
+  opacity: 0.85;
+  transform: skewX(-6deg);
 }
-
 .hero-sub {
-  margin-top: 26px;
-  font-size: 1.18rem;
+  margin-top: 24px;
+  font-size: 1.1rem;
   line-height: 1.55;
-  color: var(--navy-deep);
+  color: var(--pools-navy);
   max-width: 520px;
-  font-weight: 500;
+  font-weight: 400;
 }
+.hero-sub strong { font-weight: 700; color: var(--pools-blue); }
 
-.hero-intex {
+.hero-meta {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 36px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  margin-top: 32px;
+  font-family: var(--ff-display);
+  font-size: 0.78rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--pools-navy);
+  font-weight: 700;
 }
-.hero-intex img { height: 28px; }
-.hero-intex .divider { width: 30px; height: 1px; background: var(--navy); }
-
-/* product image stack */
-.hero-product {
-  position: relative;
-  height: 600px;
-}
-.hero-product img {
-  position: absolute;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 30px 80px -20px rgba(8,42,61,0.4);
-}
-.hero-product .p1 {
-  width: 78%;
-  height: 78%;
-  top: 5%; right: 0;
-  transform: rotate(2deg);
+.hero-meta img.intex-logo {
+  height: 30px;
   background: #fff;
-  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--pools-gray-3);
 }
-.hero-product .p2 {
-  width: 38%;
-  height: 42%;
-  bottom: 4%; left: 0;
-  transform: rotate(-4deg);
-  z-index: 3;
-  border: 8px solid var(--paper);
+.hero-meta .divider { width: 24px; height: 1px; background: var(--pools-navy); opacity: 0.4; }
+
+/* hero product stage */
+.hero-stage {
+  position: relative;
+  height: 560px;
 }
-/* price tag */
-.price-tag {
+.hero-stage .product {
   position: absolute;
-  z-index: 5;
-  top: -10px;
-  left: -20px;
-  background: var(--orange-hot);
+  width: 86%;
+  height: 78%;
+  top: 8%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 30px 70px -25px rgba(51,67,92,0.45);
+  overflow: hidden;
+}
+.hero-stage .product img {
+  width: 100%; height: 100%; object-fit: contain;
+  padding: 30px;
+}
+.hero-stage .product-2 {
+  position: absolute;
+  width: 36%;
+  height: 32%;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px -15px rgba(51,67,92,0.35);
+  overflow: hidden;
+  transform: rotate(-3deg);
+  border: 4px solid #fff;
+}
+.hero-stage .product-2 img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+
+.discount-badge {
+  position: absolute;
+  z-index: 6;
+  top: -10px; left: 10px;
+  width: 130px; height: 130px;
+  background: var(--pools-red);
   color: #fff;
-  padding: 22px 30px;
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: 'Fraunces', serif;
-  transform: rotate(-12deg);
-  box-shadow: 0 20px 40px -10px rgba(255,106,19,0.5);
+  font-family: var(--ff-display);
+  transform: rotate(-10deg);
+  box-shadow: 0 12px 28px -8px rgba(205,0,0,0.45);
   animation: tilt 4s ease-in-out infinite;
+  border: 4px solid #fff;
 }
 @keyframes tilt {
-  0%, 100% { transform: rotate(-12deg); }
-  50%      { transform: rotate(-7deg); }
+  0%, 100% { transform: rotate(-10deg); }
+  50%      { transform: rotate(-4deg); }
 }
-.price-tag .pct {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1;
-  font-style: italic;
+.discount-badge .pct { font-size: 2.4rem; font-weight: 700; line-height: 1; }
+.discount-badge .lbl { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; font-weight: 700; }
+
+/* MASCOT (rubber duck) */
+.mascot {
+  position: absolute;
+  z-index: 7;
+  bottom: 60px;
+  right: -30px;
+  width: 220px;
+  height: 220px;
+  animation: bob 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 12px 20px rgba(1,102,144,0.4));
 }
-.price-tag .lbl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-top: 4px;
-  font-weight: 700;
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+
+/* hero corner ducklings (small repeating) */
+.duck-trio {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  display: flex;
+  gap: 12px;
+  z-index: 4;
+}
+.duck-trio img {
+  width: 56px; height: 56px;
+  opacity: 0.85;
+  animation: bob2 4s ease-in-out infinite;
+}
+.duck-trio img:nth-child(2) { animation-delay: -1s; transform: scale(0.85); }
+.duck-trio img:nth-child(3) { animation-delay: -2s; transform: scale(0.7); }
+@keyframes bob2 {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 
 /* =================================================================
-   PRICE BLOCK
+   PRICE BAR (pools.shop style: clean, structured)
 ================================================================= */
-.price-block {
-  background: var(--navy-ink);
-  color: var(--cream);
-  padding: 80px 40px;
-  position: relative;
-  overflow: hidden;
+.price-bar {
+  background: #fff;
+  padding: 50px 40px;
+  border-bottom: 1px solid var(--pools-gray-3);
 }
-.price-block::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(242,148,14,0.18), transparent 60%),
-    radial-gradient(ellipse 80% 60% at 10% 100%, rgba(109,198,240,0.15), transparent 60%);
-  pointer-events: none;
-}
-.price-inner {
-  max-width: 1400px;
+.price-bar-inner {
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
   align-items: center;
-  position: relative;
-  z-index: 2;
 }
-.price-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+.price-col h3 {
+  font-family: var(--ff-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 20px;
-}
-.price-line {
-  display: flex;
-  align-items: baseline;
-  gap: 30px;
-  flex-wrap: wrap;
+  color: var(--pools-navy);
+  font-weight: 700;
+  margin-bottom: 16px;
+  opacity: 0.7;
 }
 .price-now {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(4rem, 9vw, 9rem);
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: -0.04em;
-  color: var(--orange);
-  line-height: 0.9;
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 700;
+  color: var(--pools-red);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
 }
-.price-now sup {
-  font-size: 0.5em;
-  vertical-align: baseline;
-  font-style: normal;
-  margin-right: 6px;
-  font-weight: 400;
-}
+.price-now .cur { font-size: 0.5em; vertical-align: 0.4em; margin-right: 4px; font-weight: 400; }
+.price-now .dec { font-size: 0.55em; vertical-align: 0.4em; }
 .price-old {
-  font-family: 'Fraunces', serif;
-  font-size: 1.8rem;
+  display: inline-block;
+  font-size: 1.1rem;
   text-decoration: line-through;
-  text-decoration-thickness: 3px;
-  text-decoration-color: var(--orange-hot);
-  color: rgba(254,246,231,0.5);
-  font-weight: 400;
+  text-decoration-color: var(--pools-red);
+  text-decoration-thickness: 2px;
+  color: var(--pools-navy);
+  opacity: 0.6;
+  margin-top: 6px;
+  font-weight: 600;
 }
-.price-savings {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: var(--cream);
-  font-weight: 500;
-}
-.price-savings strong {
-  background: var(--orange-hot);
+.price-saving {
+  display: inline-block;
+  background: var(--pools-red);
   color: #fff;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 3px;
-  font-weight: 800;
-  margin: 0 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-left: 8px;
 }
+.price-meta { font-size: 0.85rem; color: var(--pools-navy); margin-top: 12px; opacity: 0.8; }
 
-.countdown {
-  border: 1px solid rgba(242,148,14,0.4);
-  border-radius: 10px;
-  padding: 30px;
-  background: rgba(11,60,86,0.5);
-}
-.countdown-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 22px;
-}
+/* countdown */
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: 10px;
 }
-.countdown-cell {
-  background: var(--navy);
-  border-radius: 6px;
-  padding: 16px 10px;
+.cd-cell {
+  background: var(--pools-gray-1);
+  border-radius: 4px;
+  padding: 12px 6px;
   text-align: center;
+  border: 1px solid var(--pools-gray-3);
 }
-.countdown-cell .num {
-  font-family: 'Fraunces', serif;
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--cream);
+.cd-cell .num {
+  font-family: var(--ff-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--pools-blue);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
-.countdown-cell .unit {
-  font-family: 'JetBrains Mono', monospace;
+.cd-cell .unit {
   font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--pool-deep);
-  margin-top: 6px;
+  color: var(--pools-navy);
+  margin-top: 4px;
+  font-weight: 700;
+  opacity: 0.65;
 }
-.stock-bar {
-  margin-bottom: 18px;
-}
+
 .stock-bar-track {
   height: 8px;
-  background: rgba(254,246,231,0.15);
+  background: var(--pools-gray-2);
   border-radius: 4px;
   overflow: hidden;
-  position: relative;
+  border: 1px solid var(--pools-gray-3);
 }
 .stock-bar-fill {
   height: 100%;
   width: 22%;
-  background: linear-gradient(90deg, var(--orange), var(--orange-hot));
+  background: linear-gradient(90deg, var(--pools-orange), var(--pools-red));
   border-radius: 4px;
-  position: relative;
 }
-.stock-bar-fill::after {
-  content: '';
-  position: absolute; right: -4px; top: 50%;
-  transform: translateY(-50%);
-  width: 12px; height: 12px;
-  background: var(--orange-hot);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--orange);
-}
-.stock-text {
-  font-family: 'JetBrains Mono', monospace;
+.stock-info {
+  display: flex; justify-content: space-between;
   font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  color: var(--cream);
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 8px;
+  color: var(--pools-navy);
+  font-weight: 600;
 }
-.stock-text strong { color: var(--orange); }
+.stock-info strong { color: var(--pools-red); }
 
-.cta-btn {
+/* primary CTA — pools.shop style (green) */
+.btn {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  background: var(--orange);
-  color: var(--navy-ink);
-  padding: 22px 36px;
+  gap: 12px;
+  background: var(--pools-green);
+  color: #fff;
+  padding: 16px 28px;
   border-radius: 4px;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
   letter-spacing: 0.02em;
-  margin-top: 30px;
-  position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 30px -8px rgba(242,148,14,0.5), 0 0 0 0 rgba(242,148,14,0.5);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border: 0;
+  cursor: pointer;
 }
-.cta-btn:hover {
-  transform: translateY(-3px);
-  background: var(--orange-hot);
-  color: #fff;
-  box-shadow: 0 18px 40px -8px rgba(255,106,19,0.6), 0 0 0 8px rgba(255,106,19,0.15);
+.btn:hover {
+  background: var(--pools-green-h);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(100,125,3,0.5);
 }
-.cta-btn .arrow {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-.cta-btn:hover .arrow { transform: translateX(6px); }
+.btn .arrow { transition: transform 0.2s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+.btn-block { margin-top: 22px; }
+
+.btn-blue { background: var(--pools-blue); }
+.btn-blue:hover { background: var(--pools-blue-h); box-shadow: 0 10px 24px -8px rgba(1,102,144,0.5); }
 
 /* =================================================================
-   SPECS — BIG NUMBERS
+   SPECS
 ================================================================= */
 .specs {
-  padding: 100px 40px;
-  background: var(--paper);
+  padding: 90px 40px;
+  background: var(--pools-gray-1);
   position: relative;
 }
 .specs-head {
-  max-width: 1400px;
-  margin: 0 auto 70px;
+  max-width: 1280px;
+  margin: 0 auto 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 50px;
   align-items: end;
 }
-.specs-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 500;
-  font-size: clamp(2.4rem, 5vw, 4.6rem);
-  line-height: 0.95;
-  letter-spacing: -0.025em;
-  color: var(--navy-ink);
+.section-eyebrow {
+  font-family: var(--ff-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pools-blue);
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.specs-title em {
-  font-style: italic;
-  color: var(--orange-hot);
-  font-weight: 400;
+.section-eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: var(--pools-orange);
 }
-.specs-intro {
+.section-title {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  line-height: 1.05;
+  color: var(--pools-navy);
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.section-title .accent { color: var(--pools-blue); }
+.section-intro {
   font-size: 1rem;
-  color: var(--navy-deep);
+  color: var(--pools-navy);
   line-height: 1.7;
   max-width: 460px;
-}
-.specs-intro::before {
-  content: '01 / Hard facts';
-  display: block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 14px;
+  opacity: 0.85;
 }
 
 .specs-grid {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
-
 .spec-card {
-  padding: 36px 28px;
-  background: var(--cream);
-  border-radius: 4px;
+  padding: 30px 26px;
+  background: #fff;
+  border: 1px solid var(--pools-gray-3);
+  border-radius: 6px;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;
 }
 .spec-card:hover {
-  transform: translateY(-6px);
-  background: #fff;
+  transform: translateY(-4px);
+  border-color: var(--pools-blue);
+  box-shadow: 0 12px 30px -10px rgba(1,102,144,0.2);
 }
 .spec-card .meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-family: var(--ff-display);
+  font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  opacity: 0.7;
+  color: var(--pools-blue);
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 .spec-card .num {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(3rem, 5vw, 5.2rem);
-  font-weight: 500;
-  color: var(--navy-ink);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 4.4vw, 4.4rem);
+  font-weight: 700;
+  color: var(--pools-navy);
+  line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 .spec-card .num .unit {
-  font-size: 0.36em;
-  color: var(--orange-hot);
-  font-style: italic;
+  font-size: 0.34em;
+  color: var(--pools-orange-d);
   font-weight: 400;
-  letter-spacing: -0.01em;
   margin-left: 4px;
 }
 .spec-card .lbl {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 0.92rem;
-  color: var(--navy-deep);
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: 700;
+  color: var(--pools-navy);
 }
 .spec-card .desc {
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 0.82rem;
-  color: var(--navy);
-  opacity: 0.75;
-  line-height: 1.4;
+  color: var(--pools-navy);
+  opacity: 0.7;
+  line-height: 1.5;
 }
+.spec-card.wide   { grid-column: span 6; background: var(--pools-blue); color: #fff; border-color: var(--pools-blue); }
+.spec-card.wide:hover { background: var(--pools-blue-h); }
+.spec-card.wide .num, .spec-card.wide .lbl, .spec-card.wide .meta { color: #fff; }
+.spec-card.wide .desc { color: rgba(255,255,255,0.85); }
+.spec-card.wide .num .unit { color: var(--pools-orange); }
+.spec-card.accent { background: var(--pools-orange); border-color: var(--pools-orange-d); }
+.spec-card.accent .num, .spec-card.accent .lbl, .spec-card.accent .meta, .spec-card.accent .desc { color: #fff; }
+.spec-card.accent .num .unit { color: rgba(255,255,255,0.9); }
 
-.spec-card.wide   { grid-column: span 6; background: var(--navy-ink); color: var(--cream); }
-.spec-card.wide .num, .spec-card.wide .lbl { color: var(--cream); }
-.spec-card.wide .meta, .spec-card.wide .desc { color: var(--pool); opacity: 0.7; }
-
+.spec-card.s6 { grid-column: span 6; }
 .spec-card.s4 { grid-column: span 4; }
 .spec-card.s3 { grid-column: span 3; }
-.spec-card.s6 { grid-column: span 6; }
 
-.spec-card.accent { background: var(--orange); color: var(--navy-ink); }
-.spec-card.accent .num, .spec-card.accent .lbl, .spec-card.accent .meta, .spec-card.accent .desc { color: var(--navy-ink); }
-.spec-card.accent .num .unit { color: var(--navy-ink); opacity: 0.8; }
-
-/* =================================================================
-   VIDEO DIPTYCH
-================================================================= */
-.videos {
-  background: var(--navy-ink);
-  padding: 100px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.videos::before {
-  content: '✺';
+/* mini mascot in specs */
+.specs::after {
+  content: '';
   position: absolute;
-  top: 40px; right: 80px;
-  font-size: 14rem;
-  color: rgba(242,148,14,0.08);
-  font-family: 'Fraunces', serif;
+  right: -40px;
+  top: 40px;
+  width: 200px; height: 200px;
+  background: url('duck-mascot.svg') center/contain no-repeat;
+  transform: rotate(15deg) scaleX(-1);
+  opacity: 0.18;
   pointer-events: none;
 }
+
+/* =================================================================
+   VIDEOS
+================================================================= */
+.videos {
+  background: var(--pools-navy);
+  padding: 90px 40px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.videos .section-eyebrow { color: var(--pools-orange); }
+.videos .section-eyebrow::before { background: #fff; }
+.videos .section-title { color: #fff; }
+.videos .section-title .accent { color: var(--pools-orange); }
 .videos-head {
-  max-width: 1400px;
-  margin: 0 auto 60px;
-}
-.videos-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 16px;
-}
-.videos-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  font-weight: 500;
-  color: var(--cream);
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
-.videos-title em {
-  font-style: italic;
-  color: var(--orange);
+  max-width: 1280px;
+  margin: 0 auto 50px;
 }
 .videos-grid {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
+  gap: 20px;
 }
 .video-frame {
   position: relative;
@@ -711,20 +675,15 @@ body::before {
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: #000;
-  border: 1px solid rgba(242,148,14,0.2);
 }
-.video-frame iframe {
-  width: 100%; height: 100%;
-  border: 0;
-  display: block;
-}
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 .video-label {
   position: absolute;
-  top: 16px; left: 16px;
-  background: var(--orange);
-  color: var(--navy-ink);
-  padding: 6px 12px;
-  font-family: 'JetBrains Mono', monospace;
+  top: 14px; left: 14px;
+  background: var(--pools-orange);
+  color: #fff;
+  padding: 5px 10px;
+  font-family: var(--ff-display);
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -737,64 +696,48 @@ body::before {
    GALLERY
 ================================================================= */
 .gallery {
-  padding: 100px 40px;
-  background: var(--paper);
+  padding: 90px 40px;
+  background: #fff;
 }
 .gallery-head {
-  max-width: 1400px;
-  margin: 0 auto 60px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.gallery-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  font-weight: 500;
-  color: var(--navy-ink);
-  letter-spacing: -0.025em;
-  line-height: 1;
-}
-.gallery-title em { font-style: italic; color: var(--orange-hot); }
-.gallery-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 16px;
+  max-width: 1280px;
+  margin: 0 auto 50px;
 }
 .gallery-grid {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 14px;
+}
+.gallery-grid figure {
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  background: var(--pools-gray-1);
+  border: 1px solid var(--pools-gray-3);
 }
 .gallery-grid img {
-  width: 100%; height: 100%; object-fit: cover;
-  border-radius: 4px;
-  background: #fff;
+  width: 100%; height: 100%; object-fit: contain;
+  padding: 20px;
   display: block;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.gallery-grid figure { overflow: hidden; border-radius: 4px; position: relative; }
-.gallery-grid figure:hover img { transform: scale(1.04); }
+.gallery-grid figure:hover img { transform: scale(1.06); }
 .gallery-grid figure::after {
   content: attr(data-tag);
   position: absolute;
-  bottom: 16px; left: 16px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  bottom: 12px; left: 12px;
+  font-family: var(--ff-display);
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--navy-ink);
-  background: rgba(255,250,241,0.92);
+  color: var(--pools-navy);
+  background: #fff;
   padding: 4px 8px;
-  border-radius: 2px;
+  border-radius: 3px;
   font-weight: 700;
+  border: 1px solid var(--pools-gray-3);
 }
 .g-large { grid-column: span 7; aspect-ratio: 4 / 3; }
 .g-tall  { grid-column: span 5; aspect-ratio: 3 / 4; }
@@ -804,11 +747,11 @@ body::before {
 }
 
 /* =================================================================
-   FINAL CTA
+   FINAL CTA — duck takes the stage
 ================================================================= */
 .final {
-  background: linear-gradient(180deg, var(--pool) 0%, var(--pool-deep) 100%);
-  padding: 120px 40px 100px;
+  background: linear-gradient(180deg, var(--pools-water) 0%, var(--pools-water-d) 100%);
+  padding: 100px 40px 90px;
   position: relative;
   overflow: hidden;
 }
@@ -816,116 +759,108 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 60px,
-      rgba(255,255,255,0.15) 60px,
-      rgba(255,255,255,0.15) 61px
-    );
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 60px,
+    rgba(255,255,255,0.18) 60px,
+    rgba(255,255,255,0.18) 61px
+  );
   pointer-events: none;
 }
 .final-inner {
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
   position: relative;
   z-index: 2;
 }
-.final-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--navy-ink);
-  font-weight: 700;
+.final-mascot {
+  width: 100%;
+  max-width: 360px;
+  animation: bob 4s ease-in-out infinite;
+  filter: drop-shadow(0 18px 30px rgba(1,102,144,0.5));
+}
+.final-text .section-eyebrow {
+  background: var(--pools-red);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 3px;
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--orange);
-  padding: 8px 16px;
-  border-radius: 2px;
-  margin-bottom: 32px;
 }
+.final-text .section-eyebrow::before { background: #fff; }
 .final-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  font-weight: 500;
-  color: var(--navy-ink);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--pools-navy);
+  margin: 18px 0 18px;
+  letter-spacing: -0.005em;
+}
+.final-title .accent { color: #fff; }
+.final-text p {
+  font-size: 1rem;
+  color: var(--pools-navy);
+  max-width: 480px;
   margin-bottom: 30px;
-}
-.final-title em {
-  font-style: italic;
-  color: #fff;
-  -webkit-text-stroke: 2px var(--navy-ink);
-}
-.final-sub {
-  font-size: 1.1rem;
-  color: var(--navy-ink);
-  max-width: 580px;
-  margin: 0 auto 40px;
-  line-height: 1.55;
-  font-weight: 500;
-}
-.final .cta-btn {
-  font-size: 1.2rem;
-  padding: 26px 42px;
-  background: var(--navy-ink);
-  color: var(--cream);
-}
-.final .cta-btn:hover {
-  background: var(--navy);
-  color: #fff;
+  font-weight: 600;
 }
 
 /* =================================================================
    FOOTER
 ================================================================= */
 footer {
-  background: var(--navy-ink);
-  color: var(--cream);
-  padding: 60px 40px 40px;
-  font-size: 0.85rem;
+  background: var(--pools-navy);
+  color: #fff;
+  padding: 60px 40px 30px;
+  font-size: 0.88rem;
 }
 .footer-inner {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 40px;
   align-items: start;
 }
-footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px; }
+footer img.foot-logo {
+  height: 38px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 18px;
+}
+footer img.foot-duck {
+  width: 90px;
+  margin-top: 16px;
+  opacity: 0.9;
+}
 .footer-col h4 {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-family: var(--ff-display);
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--pools-orange);
   margin-bottom: 14px;
   font-weight: 700;
 }
 .footer-col p, .footer-col li {
-  color: var(--pool);
-  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
   margin-bottom: 4px;
   list-style: none;
 }
-.footer-col li { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+.footer-col li { font-size: 0.85rem; }
 .footer-bottom {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 40px auto 0;
-  padding-top: 24px;
-  border-top: 1px solid rgba(254,246,231,0.1);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--pool);
-  opacity: 0.7;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -937,8 +872,8 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 ================================================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.2,0.8,0.2,1), transform 0.8s cubic-bezier(0.2,0.8,0.2,1);
 }
 .reveal.in { opacity: 1; transform: translateY(0); }
 .hero .reveal:nth-child(1) { transition-delay: 0.05s; }
@@ -950,114 +885,121 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
    RESPONSIVE
 ================================================================= */
 @media (max-width: 980px) {
-  .hero-grid, .price-inner, .specs-head, .videos-grid, .footer-inner { grid-template-columns: 1fr; }
-  .hero-product { height: 380px; margin-top: 30px; }
-  .nav-meta .hide-sm { display: none; }
-  .specs-grid { grid-template-columns: repeat(6, 1fr); }
-  .spec-card.wide, .spec-card.s6, .spec-card.s4, .spec-card.s3 { grid-column: span 6; }
-  .price-tag { width: 130px; height: 130px; padding: 14px; }
-  .price-tag .pct { font-size: 2.2rem; }
-  .nav { padding: 16px 22px; }
-  .hero, .price-block, .specs, .videos, .gallery, .final { padding-left: 22px; padding-right: 22px; }
+  .hero-grid, .price-bar-inner, .specs-head, .videos-grid, .final-inner { grid-template-columns: 1fr; }
+  .hero-stage { height: 380px; margin-top: 30px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .mascot { width: 160px; height: 160px; bottom: 20px; right: -10px; }
+  .discount-badge { width: 100px; height: 100px; }
+  .discount-badge .pct { font-size: 1.8rem; }
+  .nav { padding: 14px 22px; }
+  .hero, .price-bar, .specs, .videos, .gallery, .final { padding-left: 22px; padding-right: 22px; }
+  .duck-trio { display: none; }
+  .final-mascot { max-width: 240px; margin: 0 auto; }
 }
 @media (max-width: 560px) {
   .specs-grid { grid-template-columns: 1fr 1fr; }
   .spec-card.wide, .spec-card.s6, .spec-card.s4, .spec-card.s3 { grid-column: span 2; }
-  .countdown-grid { gap: 8px; }
-  .countdown-cell { padding: 12px 6px; }
-  .countdown-cell .num { font-size: 1.8rem; }
+  .footer-inner { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- TICKER -->
-<div class="ticker-strip">
-  <div class="ticker-track">
-    <span>Sommer-Aktion 2026</span><span>−17 % auf den Intex ZX500R</span><span>Limitierte Stückzahl</span><span>Solange Vorrat reicht</span><span>Versand ab 03. Juni</span>
-    <span>Sommer-Aktion 2026</span><span>−17 % auf den Intex ZX500R</span><span>Limitierte Stückzahl</span><span>Solange Vorrat reicht</span><span>Versand ab 03. Juni</span>
-  </div>
+<!-- SALE STRIP -->
+<div class="sale-strip">
+  <span>Sommer-Aktion</span><span class="dot"></span>
+  <span>−17 % auf den Intex ZX500R</span><span class="dot"></span>
+  <span>Limitierte Stückzahl</span><span class="dot"></span>
+  <span>Versand ab 03. Juni</span>
 </div>
 
 <!-- NAV -->
 <nav class="nav">
   <a href="https://www.pools.shop" class="nav-logo"><img src="pools-logo.svg" alt="pools.shop"></a>
   <div class="nav-meta">
-    <span class="hide-sm">HB-28624 · EAN 6941057429106</span>
-    <span><span class="dot"></span>Live in Aktion</span>
+    <span>Art. HB-28624</span>
+    <span class="live"><span class="dot"></span>Sommer-Deal aktiv</span>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-watermark">Sommer</div>
   <div class="sun"></div>
   <div class="hero-water"></div>
 
   <div class="hero-grid">
     <div>
       <div class="hero-eyebrow reveal">
-        <span class="badge">Aktion</span>
-        <span>Intex · Krystal Clear Serie</span>
+        <span class="badge">Sommer-Aktion</span>
+        <span>Intex · Krystal Clear</span>
       </div>
       <h1 class="hero-title reveal">
-        Der Pool<br>putzt sich<br><em>selbst.</em>
+        Pool putzen?<br><span class="accent">Macht er.</span>
       </h1>
       <p class="hero-sub reveal">
-        Der <strong>Intex ZX500R</strong> ist der kabellose Akku-Roboter, der Boden, Wände und Wasserlinie deines Pools selbstständig reinigt. 120 Minuten am Stück. Keine Schläuche. Kein Anschluss an die Filteranlage.
+        Der <strong>Intex ZX500R</strong> ist der kabellose Akku-Roboter, der Boden, Wände und Wasserlinie deines Pools <strong>vollautomatisch</strong> reinigt. 120 Minuten Laufzeit. Kein Schlauch, kein Anschluss an die Filteranlage.
       </p>
-      <div class="hero-intex reveal">
-        Powered by
-        <img src="intex-logo.svg" alt="Intex">
+      <div class="hero-meta reveal">
+        Hersteller
+        <img class="intex-logo" src="intex-logo.svg" alt="Intex">
         <span class="divider"></span>
-        Sold at pools.shop
+        Verkauf · pools.shop
       </div>
     </div>
 
-    <div class="hero-product">
-      <div class="price-tag">
+    <div class="hero-stage">
+      <div class="discount-badge">
         <div class="pct">−17%</div>
         <div class="lbl">Sommer<br>Deal</div>
       </div>
-      <img class="p1" src="img-41915_883d2a20.jpg" alt="Intex ZX500R Roboter">
-      <img class="p2" src="img-39303_74c7e5c6.jpg" alt="Intex ZX500R Detail">
+      <div class="product"><img src="img-41915_883d2a20.jpg" alt="Intex ZX500R Pool-Roboter"></div>
+      <div class="product-2"><img src="img-39303_74c7e5c6.jpg" alt="ZX500R Detail"></div>
+      <img class="mascot" src="duck-mascot.svg" alt="pools.shop Maskottchen">
     </div>
+  </div>
+
+  <div class="duck-trio" aria-hidden="true">
+    <img src="duck-mascot.svg" alt="">
+    <img src="duck-mascot.svg" alt="">
+    <img src="duck-mascot.svg" alt="">
   </div>
 </section>
 
-<!-- PRICE BLOCK -->
-<section class="price-block">
-  <div class="price-inner">
-    <div>
-      <div class="price-label">Sommer-Aktionspreis · inkl. 19 % MwSt.</div>
-      <div class="price-line">
-        <div class="price-now"><sup>€</sup>275,<span style="font-size:0.55em;vertical-align:0.4em">48</span></div>
-        <div class="price-old">€ 331,42</div>
+<!-- PRICE BAR -->
+<section class="price-bar">
+  <div class="price-bar-inner">
+    <div class="price-col">
+      <h3>Sommer-Aktionspreis</h3>
+      <div class="price-now"><span class="cur">€</span>275<span class="dec">,48</span></div>
+      <div>
+        <span class="price-old">€ 331,42</span>
+        <span class="price-saving">Du sparst € 55,94</span>
       </div>
-      <div class="price-savings">
-        Du sparst <strong>€ 55,94</strong> gegenüber dem regulären UVP. Versandfertig ab 03. Juni — Lieferung voraussichtlich Fr, 05. Juni.
-      </div>
-      <a class="cta-btn" href="https://www.pools.shop/en/intex/krystal-clear-zx500r-robotic-pool-clean">
-        Jetzt sichern
-        <span class="arrow">→</span>
+      <div class="price-meta">inkl. 19 % MwSt. · Versandfertig ab 03. Juni · Zustellung Fr, 05. Juni</div>
+      <a class="btn btn-block" href="https://www.pools.shop/en/intex/krystal-clear-zx500r-robotic-pool-clean">
+        Jetzt sichern <span class="arrow">→</span>
       </a>
     </div>
 
-    <div class="countdown">
-      <div class="countdown-label">Aktion endet in</div>
+    <div class="price-col">
+      <h3>Aktion endet in</h3>
       <div class="countdown-grid">
-        <div class="countdown-cell"><div class="num" id="cd-d">07</div><div class="unit">Tage</div></div>
-        <div class="countdown-cell"><div class="num" id="cd-h">00</div><div class="unit">Std</div></div>
-        <div class="countdown-cell"><div class="num" id="cd-m">00</div><div class="unit">Min</div></div>
-        <div class="countdown-cell"><div class="num" id="cd-s">00</div><div class="unit">Sek</div></div>
+        <div class="cd-cell"><div class="num" id="cd-d">07</div><div class="unit">Tage</div></div>
+        <div class="cd-cell"><div class="num" id="cd-h">00</div><div class="unit">Std</div></div>
+        <div class="cd-cell"><div class="num" id="cd-m">00</div><div class="unit">Min</div></div>
+        <div class="cd-cell"><div class="num" id="cd-s">00</div><div class="unit">Sek</div></div>
       </div>
-      <div class="stock-bar">
-        <div class="stock-bar-track"><div class="stock-bar-fill"></div></div>
-        <div class="stock-text">
-          <span>Lager-Reserve</span>
-          <span><strong>Limitierte Stückzahl</strong> · solange Vorrat reicht</span>
-        </div>
+      <div class="price-meta">Nach Ablauf gilt wieder der reguläre UVP von € 331,42.</div>
+    </div>
+
+    <div class="price-col">
+      <h3>Lager-Reserve</h3>
+      <div class="stock-bar-track"><div class="stock-bar-fill"></div></div>
+      <div class="stock-info">
+        <span>Limitierte Stückzahl</span>
+        <strong>Solange Vorrat reicht</strong>
       </div>
+      <div class="price-meta">Wenn das Lager leer ist, ist die Aktion vorbei. Schnell sein lohnt sich.</div>
     </div>
   </div>
 </section>
@@ -1065,56 +1007,57 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 <!-- SPECS -->
 <section class="specs">
   <div class="specs-head">
-    <h2 class="specs-title">
-      Keine Marketing-Floskeln. <em>Echte Zahlen.</em>
-    </h2>
-    <p class="specs-intro">
-      Direkt vom Datenblatt von Intex Trading B.V. übernommen. Jeder Wert nachprüfbar in Handbuch und auf pools.shop.
+    <div>
+      <div class="section-eyebrow">01 — Hard Facts</div>
+      <h2 class="section-title">Echte Zahlen.<br><span class="accent">Keine Floskeln.</span></h2>
+    </div>
+    <p class="section-intro">
+      Alle Werte direkt aus dem Datenblatt von <strong>Intex Trading B.V.</strong> übernommen. Nachprüfbar im offiziellen Handbuch und auf der pools.shop Produktseite.
     </p>
   </div>
 
   <div class="specs-grid">
     <div class="spec-card wide">
-      <div class="meta"><span>Laufzeit</span><span>·</span></div>
+      <div class="meta">Laufzeit</div>
       <div class="num">120<span class="unit">Min</span></div>
       <div class="lbl">Akku-Laufzeit pro Ladung</div>
-      <div class="desc">LiFePO₄ (Lithium-Eisenphosphat) — sicher, langlebig, ohne Memory-Effekt. Volle Ladung in 3 Stunden.</div>
+      <div class="desc">LiFePO₄ (Lithium-Eisenphosphat) — sicher, langlebig, kein Memory-Effekt. Volle Ladung in 3 Stunden.</div>
     </div>
     <div class="spec-card s6 accent">
-      <div class="meta"><span>Pumpleistung</span><span>·</span></div>
+      <div class="meta">Pumpleistung</div>
       <div class="num">11 355<span class="unit">L/h</span></div>
       <div class="lbl">Durchflussrate der Filterpumpe</div>
       <div class="desc">Drei Motoren ziehen Schmutz, Sand und feine Partikel zuverlässig aus dem Wasser.</div>
     </div>
     <div class="spec-card s4">
-      <div class="meta"><span>Pool-Fläche</span><span>·</span></div>
+      <div class="meta">Pool-Fläche</div>
       <div class="num">76<span class="unit">m²</span></div>
-      <div class="lbl">Maximale Reinigungsfläche</div>
+      <div class="lbl">Max. Reinigungsfläche</div>
     </div>
     <div class="spec-card s4">
-      <div class="meta"><span>Tauchtiefe</span><span>·</span></div>
+      <div class="meta">Tauchtiefe</div>
       <div class="num">2<span class="unit">m</span></div>
       <div class="lbl">Maximale Tauchtiefe</div>
     </div>
     <div class="spec-card s4">
-      <div class="meta"><span>Schutzklasse</span><span>·</span></div>
+      <div class="meta">Schutzklasse</div>
       <div class="num">IPX<span class="unit">8</span></div>
       <div class="lbl">Vollständig wasserdicht</div>
     </div>
     <div class="spec-card s3">
-      <div class="meta"><span>Motoren</span><span>·</span></div>
+      <div class="meta">Motoren</div>
       <div class="num">3</div>
       <div class="lbl">Antriebs- &amp; Saugmotoren</div>
     </div>
     <div class="spec-card s3">
-      <div class="meta"><span>Salzwasser</span><span>·</span></div>
+      <div class="meta">Salzwasser</div>
       <div class="num">Ja</div>
       <div class="lbl">Salzwasser-tauglich</div>
     </div>
     <div class="spec-card s6">
-      <div class="meta"><span>Reinigung</span><span>·</span></div>
-      <div class="num" style="font-size: clamp(1.6rem, 2.4vw, 2.6rem); letter-spacing: -0.01em; line-height: 1.1;">Boden · Wände · Wasserlinie</div>
-      <div class="lbl" style="margin-top: 20px;">Alle Boden­beläge — Aufstellpool, Frame-Pool, Stahlwand­pool, eingelassener Pool.</div>
+      <div class="meta">Reinigung</div>
+      <div class="num" style="font-size: clamp(1.4rem, 2.2vw, 2.2rem); letter-spacing: 0;">Boden · Wände · Wasserlinie</div>
+      <div class="lbl" style="margin-top: 16px;">Geeignet für Aufstellpools, Frame-Pools, Stahlwand-Pools und eingelassene Becken — alle Boden­beläge.</div>
     </div>
   </div>
 </section>
@@ -1122,20 +1065,20 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 <!-- VIDEOS -->
 <section class="videos">
   <div class="videos-head">
-    <div class="videos-eyebrow">02 / In Action</div>
-    <h2 class="videos-title">Sieh ihm beim <em>Schwimmen</em> zu.</h2>
+    <div class="section-eyebrow">02 — In Aktion</div>
+    <h2 class="section-title">Sieh ihm beim <span class="accent">Schwimmen</span> zu.</h2>
   </div>
   <div class="videos-grid">
     <div class="video-frame">
       <span class="video-label">Produkt-Demo</span>
-      <iframe src="https://www.youtube-nocookie.com/embed/wS29-84vHcE?autoplay=0&rel=0&modestbranding=1"
+      <iframe src="https://www.youtube-nocookie.com/embed/wS29-84vHcE?rel=0&modestbranding=1"
               title="Intex ZX500R Demo"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
     </div>
     <div class="video-frame">
-      <span class="video-label">Im Pool</span>
-      <iframe src="https://www.youtube-nocookie.com/embed/rcoTdKpPng4?autoplay=0&rel=0&modestbranding=1"
+      <span class="video-label">Im Einsatz</span>
+      <iframe src="https://www.youtube-nocookie.com/embed/rcoTdKpPng4?rel=0&modestbranding=1"
               title="Intex ZX500R Praxis"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -1146,10 +1089,8 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 <!-- GALLERY -->
 <section class="gallery">
   <div class="gallery-head">
-    <div>
-      <div class="gallery-eyebrow">03 / Details</div>
-      <h2 class="gallery-title">Alles, was im Karton ist — <em>aus jedem Winkel.</em></h2>
-    </div>
+    <div class="section-eyebrow">03 — Details</div>
+    <h2 class="section-title">Alles im Karton.<br><span class="accent">Aus jedem Winkel.</span></h2>
   </div>
   <div class="gallery-grid">
     <figure class="g-large" data-tag="01 · Hauptgerät">
@@ -1165,7 +1106,7 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
       <img src="img-39309_2996a1c9.jpg" alt="ZX500R Filtereinsatz" loading="lazy">
     </figure>
     <figure class="g-third" data-tag="05 · Akku">
-      <img src="img-39312_cf97d99d.jpg" alt="ZX500R LiFePO₄ Akku" loading="lazy">
+      <img src="img-39312_cf97d99d.jpg" alt="ZX500R LiFePO4 Akku" loading="lazy">
     </figure>
   </div>
 </section>
@@ -1173,17 +1114,15 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 <!-- FINAL CTA -->
 <section class="final">
   <div class="final-inner">
-    <div class="final-eyebrow">⚠ Begrenzte Stückzahl</div>
-    <h2 class="final-title">
-      Bevor der Sommer<br>vorbei ist — und<br>der <em>Vorrat</em> auch.
-    </h2>
-    <p class="final-sub">
-      Die Sommer-Aktion läuft, solange wir liefern können. Der ZX500R ist bei pools.shop nur in begrenzter Stückzahl reserviert. Versand startet am 03. Juni, voraussichtliche Zustellung Freitag, 05. Juni.
-    </p>
-    <a class="cta-btn" href="https://www.pools.shop/en/intex/krystal-clear-zx500r-robotic-pool-clean">
-      Auf pools.shop bestellen
-      <span class="arrow">→</span>
-    </a>
+    <img class="final-mascot" src="duck-mascot.svg" alt="pools.shop Maskottchen winkt">
+    <div class="final-text">
+      <div class="section-eyebrow">Begrenzte Stückzahl</div>
+      <h2 class="final-title">Bevor der<br>Sommer vorbei ist —<br>und der <span class="accent">Vorrat</span> auch.</h2>
+      <p>Die Sommer-Aktion läuft solange wir liefern können. Versand ab 03. Juni, voraussichtliche Zustellung Freitag, 05. Juni.</p>
+      <a class="btn btn-blue" href="https://www.pools.shop/en/intex/krystal-clear-zx500r-robotic-pool-clean">
+        Auf pools.shop bestellen <span class="arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1191,16 +1130,28 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
 <footer>
   <div class="footer-inner">
     <div class="footer-col">
-      <img src="pools-logo.svg" alt="pools.shop">
-      <p>pools.shop — Pools, Pflege und Zubehör für die ganze Saison. Verkauf in DE, AT, CH, IT, ES, NL, SE, UK und mehr.</p>
+      <img class="foot-logo" src="pools-logo.svg" alt="pools.shop">
+      <p>Pools, Pflege und Zubehör für die ganze Saison. Verkauf in DE, AT, CH, IT, ES, NL, SE, UK und weiteren Ländern.</p>
+      <img class="foot-duck" src="duck-mascot.svg" alt="">
     </div>
     <div class="footer-col">
       <h4>Produkt</h4>
       <ul>
         <li>Art. HB-28624</li>
+        <li>Mfr. 28624</li>
         <li>EAN 6941057429106</li>
         <li>UVP € 331,42</li>
         <li>Aktion € 275,48</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Technik</h4>
+      <ul>
+        <li>120 Min Laufzeit</li>
+        <li>LiFePO₄ Akku</li>
+        <li>11 355 L/h Pumpe</li>
+        <li>IPX8 · 3 Motoren</li>
+        <li>76 m² · 2 m Tiefe</li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1216,17 +1167,15 @@ footer img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px;
   </div>
   <div class="footer-bottom">
     <span>© 2026 niceshops GmbH · pools.shop</span>
-    <span>Alle Preise inkl. 19 % MwSt. · Sommer-Aktion 2026</span>
+    <span>Alle Preise inkl. 19 % MwSt. · Sommer-Aktion 2026 · Solange Vorrat reicht</span>
   </div>
 </footer>
 
 <script>
-// ---- reveal on load
-window.addEventListener('load', () => {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-});
+// reveal on load
+window.addEventListener('load', () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')));
 
-// ---- reveal on scroll (specs, gallery) — IO progressively, but always shown if no IO
+// reveal on scroll
 const targets = document.querySelectorAll('.spec-card, .video-frame, .gallery-grid figure');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
@@ -1235,21 +1184,20 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
   targets.forEach(el => { el.classList.add('reveal'); io.observe(el); });
-  // safety: reveal anything still hidden after 4 s
   setTimeout(() => targets.forEach(el => el.classList.add('in')), 4000);
 } else {
   targets.forEach(el => el.classList.add('in'));
 }
 
-// ---- countdown to next Sunday end of day (rolling 7-day sale)
+// countdown
 (function () {
   const end = new Date();
   end.setDate(end.getDate() + 7);
   end.setHours(23, 59, 59, 0);
-  const $d = document.getElementById('cd-d');
-  const $h = document.getElementById('cd-h');
-  const $m = document.getElementById('cd-m');
-  const $s = document.getElementById('cd-s');
+  const $d = document.getElementById('cd-d'),
+        $h = document.getElementById('cd-h'),
+        $m = document.getElementById('cd-m'),
+        $s = document.getElementById('cd-s');
   function tick() {
     let delta = Math.max(0, end - new Date()) / 1000;
     const d = Math.floor(delta / 86400); delta -= d * 86400;

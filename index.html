@@ -728,6 +728,30 @@ body {
   max-width: 1280px;
   margin: 0 auto 50px;
 }
+.hero-clip-wrap {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
+}
+.hero-clip { width: 100%; height: 100%; object-fit: cover; display: block; }
+.clip-caption {
+  position: absolute;
+  bottom: 14px; left: 14px; right: 14px;
+  font-family: var(--ff-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-align: center;
+  font-weight: 700;
+  pointer-events: none;
+}
 .videos-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -1151,6 +1175,16 @@ footer img.foot-duck {
     <div class="section-eyebrow">02 — In Aktion</div>
     <h2 class="section-title">Sieh ihm beim <span class="accent">Schwimmen</span> zu.</h2>
   </div>
+
+  <!-- AI-generated 4s loop showing the cleaning -->
+  <div class="hero-clip-wrap">
+    <video class="hero-clip" autoplay loop muted playsinline preload="metadata" poster="video-frames/robot-uw-norm.jpg">
+      <source src="zx500r-clip.mp4" type="video/mp4">
+    </video>
+    <span class="video-label">Live · Loop</span>
+    <span class="clip-caption">Vorher · Reinigung · Nachher — und unsere Ente schaut von oben zu</span>
+  </div>
+
   <div class="videos-grid">
     <div class="video-frame">
       <span class="video-label">Produkt-Demo</span>

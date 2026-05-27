@@ -1,0 +1,5 @@
+video-frames/*.json
+video-frames/*.url
+video-frames/duck-square.png
+video-frames/duck-circle.png
+video-frames/clean.png
